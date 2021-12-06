@@ -1,17 +1,17 @@
-<div class="letter-container">
-<h1>New Game</h1>
-
-<ul>
-  <% @letters.each do |letter| %>
-    <li><%= letter %></li>
-  <% end %>
-</ul>
-
-<p>What is the longest word you can find?</p>
-<form action="/score" method="post">
-<input type="text" name="word" id="wordbox">
-<input type="submit" value="Play" id="button">
-<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-<%= hidden_field_tag :letters, @letters %>
-</form>
+<div class="container">
+  <div class="letter-container">
+    <h1>Longest Word Game</h1>
+    <ul>
+      <% @letters.each do |letter| %>
+        <li><%= letter %></li>
+      <% end %>
+    </ul>
+    <p style="font-size: 20px;">What is the longest word you can find?</p>
+    <form action="/score" method="post">
+      <input type="text" name="word" id="wordbox">
+      <input type="submit" value="Play" id="button">
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      <%= hidden_field_tag :letters, @letters %>
+    </form>
+  </div>
 </div>
